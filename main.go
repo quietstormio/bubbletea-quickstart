@@ -24,8 +24,8 @@ type model struct {
 // Give the model an initial value
 func initialModel() model {
 	return model{
-		title:   "Quiet Storm Counter",
 		counter: 0,
+		title:   "Quiet Storm Counter",
 	}
 }
 
