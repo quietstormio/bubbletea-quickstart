@@ -18,11 +18,13 @@ var (
 // Define the model
 type model struct {
 	counter int
+	title   string
 }
 
 // Give the model an initial value
 func initialModel() model {
 	return model{
+		title:   "Quiet Storm Counter",
 		counter: 0,
 	}
 }
@@ -56,7 +58,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() string {
-	title := titleStyle.Render("Quiet Storm Counter")
+	title := titleStyle.Render(m.title)
 	counter := counterStyle.Render(fmt.Sprintf("Count: %d", m.counter))
 	return fmt.Sprintf("%s\n\n%s", title, counter)
 }
